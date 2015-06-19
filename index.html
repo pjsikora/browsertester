@@ -1,0 +1,36 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+     <script src="jquery-2.1.3.min.js"></script>
+     <script src="modernizr_detectizr.js"></script>
+</head>
+<body>
+    <div id="size">
+        <h3>Size</h3>
+        <p></p>
+    </div>
+
+    <div id="pixelratio">
+        <h3>Pixel ratio</h3>
+        <p></p>
+    </div>
+    <div id="modernizr">
+        <h3>Modernizer/detectizer</h3>
+        <p></p>
+    </div>
+
+    <script>
+    $('document').ready(function() {
+        $('#modernizr p').html($('html').attr('class'));
+        $('#size p').html('width:'+$(window).width() + ' height:'+ $(window).height());
+        $('#pixelratio p').html(window.getDevicePixelRatio());
+        
+        $(window).resize(function() {
+            $('#size').html('width:'+$(window).width() + ' height:'+ $(window).height());
+        })
+    });
+
+    </script>
+</body>
+</html>
